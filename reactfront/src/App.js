@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+
+//Importamos lo que usamos
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+//importamos nuestra vista
+import ShowTercero from './components/tercero/ShowTercero';
+import CreateTercero from './components/tercero/CreateTercero';
+import EditTercero from './components/tercero/EditTercero';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div class="container-fluid">
+      <div class="row">
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={ <ShowTercero/> } />
+            <Route path='/create' element={ <CreateTercero/> } />
+            <Route path='/tercero/:id' element={ <EditTercero/> } />
+          </Routes>
+        </BrowserRouter>
+      </div>
     </div>
   );
 }
