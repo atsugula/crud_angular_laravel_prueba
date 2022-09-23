@@ -1,6 +1,6 @@
 # Realizacion pruebas full-stack
 
-## Antes de empezar, el proyecto esta configurado para que se ejecute localmente 🚀
+### Antes de empezar, el proyecto esta configurado para que se ejecute localmente
 
 ## Iniciando 🚀
 _Hay que tener varias cosas en cuenta, para que el proyecto funcione correctamente, es por esto que les recomiendo y sigan las instrucciones_
