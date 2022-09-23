@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class ElementosLista extends Model
 {
     public $timestamps = false;
-    protected $fillable = ['nombre','tipo_lista_id','elemento_lista_id'];
+    protected $fillable = ['nombre','tipo_lista_id'];
 
     public function tiposLista()
     {

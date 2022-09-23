@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('nombre',50);
             $table->unsignedBigInteger('tipo_lista_id');
-            $table->BigInteger('elemento_lista_id');
 
             $table->foreign('tipo_lista_id')->references('id')->on('tipos_listas');
         });

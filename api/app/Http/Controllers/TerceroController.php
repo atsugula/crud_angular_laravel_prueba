@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Tercero;
 use Illuminate\Http\Request;
+use App\Models\ElementosLista;
 
 /**
  * Class TerceroController
@@ -14,8 +15,26 @@ class TerceroController extends Controller
 
     public function index()
     {
+        //Para llevar el nombre de los selects y no el id
+        $elementos = [];
         $terceros = Tercero::all();
-        return $terceros;
+        foreach ($terceros as $lista){
+            $e = [
+                'id' => $lista->id,
+                'nombre1' => $lista->nombre1,
+                'nombre2' => $lista->nombre2,
+                'apellido1' => $lista->apellido1,
+                'apellido2' => $lista->apellido2,
+                'numero_identificacion' => $lista->numero_identificacion,
+                'departamento_id' => ElementosLista::where('id','=',$lista->departamento_id)->value('nombre'),
+                'ciudad_id' => ElementosLista::where('id','=',$lista->ciudad_id)->value('nombre'),
+                'tipo_contribuyente_id' => ElementosLista::where('id','=',$lista->tipo_contribuyente_id)->value('nombre'),
+                'tipo_identificacion_id' => ElementosLista::where('id','=',$lista->tipo_identificacion_id)->value('nombre'),
+                'tipo_tercero_id' => ElementosLista::where('id','=',$lista->tipo_tercero_id)->value('nombre'),
+            ];
+            array_push($elementos,$e);
+        }
+        return $elementos;
     }
 
     public function store(Request $request)

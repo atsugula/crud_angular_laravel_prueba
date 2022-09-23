@@ -14,23 +14,24 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::controller(ElementosListaController::class)->group(function(){
     Route::get('/elementos','index');
     Route::post('/elemento','store');
-    Route::get('/elementos/{id}','show');
-    Route::put('/elementos/{id}','update');
-    Route::delete('/elementos/{id}','destroy');
+    Route::get('/elemento/{id}','show');
+    Route::put('/elemento/{id}','update');
+    Route::delete('/elemento/{id}','destroy');
+    Route::get('/tipoElemento/{tipo}','findElemento');
 });
 
 Route::controller(TerceroController::class)->group(function(){
     Route::get('/terceros','index');
     Route::post('/tercero','store');
-    Route::get('/terceros/{id}','show');
-    Route::put('/terceros/{id}','update');
-    Route::delete('/terceros/{id}','destroy');
+    Route::get('/tercero/{id}','show');
+    Route::put('/tercero/{id}','update');
+    Route::delete('/tercero/{id}','destroy');
 });
 
 Route::controller(TiposListaController::class)->group(function(){
     Route::get('/tipo-listas','index');
     Route::post('/tipo-lista','store');
-    Route::get('/tipo-listas/{id}','show');
-    Route::put('/tipo-listas/{id}','update');
-    Route::delete('/tipo-listas/{id}','destroy');
+    Route::get('/tipo-lista/{id}','show');
+    Route::put('/tipo-lista/{id}','update');
+    Route::delete('/tipo-lista/{id}','destroy');
 });

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ElementosLista;
+use App\Models\TiposLista;
 use Illuminate\Http\Request;
 
 /**
@@ -52,4 +53,13 @@ class ElementosListaController extends Controller
         $elementosLista = ElementosLista::find($id)->delete();
         return $elementosLista;
     }
+
+    //Desarrollamos este metodo para traer
+    //Todos los elemento, dependiendo del tipo
+    public function findElemento($tipo){
+        $tipolista = TiposLista::where('nombre',$tipo)->get();
+        $elemento=ElementosLista::where('tipo_lista_id','=',$tipolista[0]->id)->get();
+        return $elemento;
+    }
+
 }
