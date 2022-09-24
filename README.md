@@ -36,6 +36,14 @@ _Listo necesitamos ejecutar las migraciones y los seeders_
 php artisan migrate --seed
 ```
 
+_Instalación react_
+
+_Cambia a la carpeta donde clonaste el repositorio y abre la carpeta reactfront, despues ejecuta el siguiente comando_
+
+```
+npm i
+```
+
 ### Corre los servidores 🚀
 _En la carpeta de api ejecuta el siguiente comando_
 
